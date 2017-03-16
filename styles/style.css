@@ -1,69 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 /*Without changing anything in the html, add the following styles using advanced selectors*/
 
 
 /* Give the Header element a background color */
+header {
+  background-color: orange;
+}
 
+header h1 {
+  font-size: 50px;
+}
 
 /* Center Everything in Header  and footer */
-
+header, footer {
+  text-align: center;
+}
 
 /* All Text to Helvetica */
-
+* {
+  font-family: Helvetica;
+}
 
 /* All links colors gray*/
-
+a {
+  color: gray;
+}
 
 /* All links hover color red*/
-
+a:hover {
+  color: red;
+}
 
 /* All Links Visted Color black*/
+a:visited {
+  color: black;
+}
 
+.post-content img:first-of-type {
+  height: 400px;
+  width: 400px;
+  float: left;
+  margin: 5px 50px 50px 20px;
+  border: solid orange 5px;
+}
+
+.post-content p:first-of-type{
+  margin: 10px 50px 10px 20px;
+  padding: 75px 20px;
+  width: 1000px;
+}
+
+.post-content:first-of-type p:nth-last-of-type(2) {
+  padding-bottom: 125px;
+}
+
+.post-content img:not(:first-child) {
+  clear: both;
+  display: inline-block;
+  width: 25%;
+  margin: 0.5em 2%;
+  padding: .5%;
+  border: dashed orange 2px;
+}
 
 /*Footer Disclaimer Text to be .5 em*/
-
+#disclaimer {
+  font-size: .5em;
+}
 
 /* Remove Bullet Points from Header Navigation Links */
+header ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 10px;
+}
 
+nav li {
+  display: inline;
+  list-style-type: none;
+  font-size: 1.25em;
+  padding: 20px;
+}
 
 /* All Post's Comment Links Italicized, Orange and Remove the Underline */
-
+a[href*="comments"] {
+  font-style: italic;
+  color: orange;
+  text-decoration: none;
+}
 
 /* All Post's Comment Links Show Underline on Hover */
-
+a[href*="comments"]:hover {
+  text-decoration: underline;
+}
 
 /* All Post's Author's Links Bold and Blue, with no Underline */
-
+h3 a {
+  font-weight: bold;
+  color: blue;
+  text-decoration: none;
+}
 
 /* Article Paragraph Text should have line height of 200%*/
-
+article p {
+  line-height: 200%;
+}
 
 /* The First Letter of each Article be 2em */
-
+article::first-letter {
+  font-size: 2em;
+}
 
 /* The First Image in every Article should have Rounded Corners*/
+article img:first-child {
+  border-radius: 5%;
+}
 
-
-/* The Top-Most Top Cat Should have a Golden Background */
-
+ /*The Top-Most Top Cat Should have a Golden Background */
+#top-cats section:first-of-type {
+  background-color: gold;
+}
 
 /* The 2nd-Most Top Cat Should have a Silver/gray Background */
-
+#top-cats section:nth-of-type(2) {
+  background-color: Silver;
+}
 
 /* The 3rd-Most Top Cat Should have a Bronze/brown Background */
-
+#top-cats + section {
+  background-color: brown;
+}
 
 /* Every other Article's Post-Content Background Color to a Light Grey */
+article:nth-last-of-type(2n) {
+  background-color: lightgrey;
+}
 
 
 /* All Top Kitten's Profile Photos Rounded */
-
+#top-cats img, #top-cats + section img {
+  border-radius: 50%
+}
 
 /*** BONUS ***/
 
 /* Add a cat emoji before a Cat's Name (in the heading content)*/
-
+h3 a::before {
+  content:"😺"
+}
 
 /* Top-most Top Cat has a trophy emoji before name */
-
+#top-cats section:first-of-type h3:before {
+  content:'🏆'
+}
 
 /* Use Google Fonts to Change h1 & h2 fonts to Lobster */
+h1, h2 {
+  font-family: "Lobster";
+}
